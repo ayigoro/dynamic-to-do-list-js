@@ -1,7 +1,17 @@
 document.addEventListener('DOMContentLoaded',()=>{
+  const storedTasks = localStorage.getItem("tasks")
+  const tasks = storedTasks ? JSON.parse(storedTasks):[]
+  const taskList = document.getElementById("task-list")
+  tasks.forEach(tasks => {
+    const li = document.createElement("li")
+    li.textContent = task
+    taskList.appendChild(li)
+  });
+  
+  
   const addButton = document.getElementById("add-task-btn")
   const taskInput =  document.getElementById("task-input")
-  const taskList = document.getElementById("task-list")
+  
 
   function addTask (){
     const taskText = taskInput.value.trim()
@@ -29,8 +39,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     if (event.key == 'Enter'){
       addTask()
     }
+    
   })
-  document.addEventListener('DOMContentLoaded',()=>{
+   document.addEventListener('DOMContentLoaded',()=>{
     addTask()
   })
 })
