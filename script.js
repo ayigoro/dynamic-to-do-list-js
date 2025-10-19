@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded',()=>{
   const storedTasks = localStorage.getItem("tasks")
-  const tasks = storedTasks ? JSON.parse(storedTasks):[]
+  const Loadtasks = storedTasks ? JSON.parse(storedTasks):[]
   const taskList = document.getElementById("task-list")
-  tasks.forEach(tasks => {
+  Loadtasks.forEach(task => {
     const li = document.createElement("li")
     li.textContent = task
     taskList.appendChild(li)
