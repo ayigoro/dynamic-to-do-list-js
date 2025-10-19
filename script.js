@@ -33,9 +33,12 @@ document.addEventListener('DOMContentLoaded',()=>{
       li.appendChild(removeBtn)
       taskList.appendChild(li)
       taskInput.value = ""
+      tasks.push(taskText);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      
 
     }
-      
+    
   }
   addButton.addEventListener('click',addTask())
   taskInput.addEventListener('keypress',(event)=>{
