@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded',()=>{
-  function Loadtasks (){
+  function loadTasks (){
     const storedTasks = localStorage.getItem("tasks")
   const tasks = storedTasks ? JSON.parse(storedTasks):[]
   const taskList = document.getElementById("task-list")
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     taskList.appendChild(li)
   });
   }
-  Loadtasks()
+  loadTasks()
   
   
   const addButton = document.getElementById("add-task-btn")
